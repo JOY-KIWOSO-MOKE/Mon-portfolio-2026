@@ -191,7 +191,7 @@ section h2::after{
     background-color: #f0f0f0;
 }
 .compétences table thead th {
-    text-align: center;
+    text-align: left;
 }
 footer {
     margin-top: 3rem;
