@@ -506,3 +506,110 @@ footer a:hover{
         font-size: 2.2rem;
     }
 }
+
+/* Styles pour la page Passions */
+.passions-section{
+    max-width: 1100px;
+    margin: 6rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+.passions-section h2{
+    color: var(--violet-doux);
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+}
+.passions-section .intro{
+    color: var(--gris-foncé);
+    margin-bottom: 2rem;
+}
+
+.passions-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cartes par ligne */
+    gap: 28px;
+    align-items: start;
+}
+
+/* Responsive : 2 colonnes puis 1 colonne */
+@media (max-width: 900px){
+    .passions-grid{ grid-template-columns: repeat(2, 1fr); }
+    .passions-section{ margin: 4rem auto; }
+    .passion-card img{ height: 160px; }
+}
+@media (max-width: 600px){
+    .passions-grid{ grid-template-columns: 1fr; }
+    .passion-card img{ height: 140px; }
+}
+
+.passion-card{
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(83,78,221,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+}
+.passion-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(83,78,221,0.12);
+}
+
+.passion-card img{
+    width: 100%;         /* occupe toute la largeur de la card */
+    height: 180px;       /* hauteur fixe pour uniformité (ajuste si besoin) */
+    object-fit: cover;   /* recadre sans déformer */
+    display: block;      /* évite les espaces blancs sous les images */
+}
+
+/* Si tu préfères hauteur variable (pas de recadrage) : */
+/*
+.passion-card img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+*/
+
+.passion-body{
+    padding: 18px;
+    text-align: left;
+    flex: 1;
+}
+.passion-body h3{
+    color: var(--violet-foncé);
+    margin-bottom: 8px;
+    font-size: 1.15rem;
+}
+.passion-body p{
+    color: var(--gris-foncé);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+/* tags */
+.passion-tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.passion-tags span{
+    background: var(--gris-clair);
+    color: var(--violet-doux);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px){
+    .passions-section{ margin: 4rem auto; }
+    .passion-card img{ height: 160px; }
+}
+@media (max-width: 520px){
+    .passion-card img{ height: 140px; }
+    .passion-body h3{ font-size: 1rem; }
+}
